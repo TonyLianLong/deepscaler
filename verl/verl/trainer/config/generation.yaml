@@ -35,12 +35,14 @@ rollout:
   max_num_batched_tokens: 8192
   max_num_seqs: 1024
   log_prob_micro_batch_size: 8
+  log_prob_micro_batch_size_per_gpu: null
   # for hf rollout
   do_sample: True
   # This must be set to one for eval script to work.
   # Use data.num_samples instead.
   n: 1
   n_val: 1
+  disable_log_stats: True
   enable_chunked_prefill: True
 
 # Unneccessary parameters for generation.

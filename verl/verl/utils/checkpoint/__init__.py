@@ -11,10 +11,3 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-import os
-
-version_folder = os.path.dirname(os.path.join(os.path.abspath(__file__)))
-
-with open(os.path.join(os.path.join(version_folder, os.pardir), 'version/version')) as f:
-    __version__ = f.read().strip()

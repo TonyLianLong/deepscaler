@@ -117,8 +117,6 @@ def main(config):
 @ray.remote
 def main_task(config):
     from verl.utils.fs import copy_local_path_from_hdfs
-    from transformers import AutoTokenizer
-
     # print initial config
     from pprint import pprint
     from omegaconf import OmegaConf
