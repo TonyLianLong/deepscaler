@@ -33,7 +33,7 @@ class RewardMathFn(RewardFn):
         model_response = input.model_response
         
         # Extract solution.
-        if THOUGHT_DELIMITER_START in model_response and THOUGHT_DELIMITER_END in model_response:
+        if THOUGHT_DELIMITER_END in model_response:
             model_solution = model_response.split(THOUGHT_DELIMITER_END)[1]
         else:
             return RewardOutput(reward=self.config.format_error_reward, is_correct=False)
@@ -103,6 +103,7 @@ def deepscaler_reward_fn(solution_str: str, ground_truth: Union[str, List[str]],
     reward_config.use_math_orm = enable_llm
     reward_fn = RewardMathFn(reward_config)
     reward_response = reward_fn(RewardInput(problem=solution_str, problem_type=RewardType.MATH, model_response=solution_str, ground_truth={"answer": ground_truth}))
+    # print(reward_response.is_correct, reward_response.reward, solution_str, ground_truth)
     return reward_response.is_correct
 
 if __name__ == "__main__":

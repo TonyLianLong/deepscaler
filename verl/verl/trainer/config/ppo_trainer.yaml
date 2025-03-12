@@ -146,6 +146,9 @@ algorithm:
   kl_ctrl:
     type: fixed
     kl_coef: 0.001
+  length_penalty: False
+  # Scale factor for length penalty
+  length_penalty_alpha: 1.0
 
 trainer:
   rejection_sample: False # Reject sample prompts that all succeed or all fail (0 signal for GRPO due to normalization).

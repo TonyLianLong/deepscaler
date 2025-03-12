@@ -176,5 +176,6 @@ cython_debug/
 # Ignore verl script outputs.
 **/outputs/
 **/wandb/
-**/checkpoints/
+**/checkpoints
 data/*
+evaluation
